@@ -3,12 +3,25 @@ import '../App';
 import { API_URL } from '../API';
 import axios from 'axios';
 import  { useAppContext } from "./context/appContext";
-const BookList = () => {
+import { useNavigate } from "react-router-dom";
+
+const BookList = (props) => {
     const [books, setBooks] = useState([]);
 
 const { favourites, addToFavourites, removeFromFavourites } = useAppContext();
 
 console.log("favourite are", favourites);
+const navigate = useNavigate();
+
+
+useEffect(() => {
+  if(props.status){
+      console.log("Authentication successfull")
+  }
+  else{
+      navigate("/")
+  }
+}, [navigate, props.status]);
 
 
 const favouritesChecker = (id) => {
@@ -37,12 +50,12 @@ const favouritesChecker = (id) => {
            <div>
             {favouritesChecker(book.id) ?(
                  <button onClick={() => removeFromFavourites(book.id)}>
-                 Remove From Favourite</button>
+                 Remove From Cart</button>
             ):(
             <button onClick={()=> addToFavourites(book)}>
-            Add to Favourite</button>)}
+            Add to Cart</button>)}
             </div>
-           <div><button>Add to Cart</button></div>
+        
            </div>
       ))}
    </div>;

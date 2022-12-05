@@ -1,18 +1,25 @@
-import React from 'react'
+
 import '../App';
 import { Link } from 'react-router-dom';
-const navbar = () => {
+
+
+export default function Navbar(props) {
+
+
+
+   
   return (
     
         <div className='navbar'>
-        <div><h1>Books Rental App</h1></div>
+        <div> <Link to="/booklist"><h1>Books Rental App</h1></Link></div>
         <div>
-          <Link to="/favourites"><h3>Your Favaourites</h3></Link>
+          <Link to="/favourites"><h3>Your Cart</h3></Link>
         </div>
-        <div>Cart</div>
+        <div> <Link to="/"><h3>Log Out</h3></Link></div>
+       
         </div>
  
   )
 }
 
-export default navbar;
+

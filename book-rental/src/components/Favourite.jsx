@@ -26,14 +26,14 @@ export const Favourite = () => {
            <div>
             {favouritesChecker(book.id) ?(
                  <button onClick={() => removeFromFavourites(book.id)}>
-                 Remove From Favourite</button>
+                 Remove From Cart</button>
             ):(
             <button onClick={()=> addToFavourites(book)}>
-            Add to Favourite</button>)}
+            Add to Cart</button>)}
             </div>
-           <div><button>Add to Cart</button></div>
+           
            </div>
-      )):<h2>you don't have any favourites books yet</h2>}
+      )):<h2>you don't have any books yet</h2>}
     </div>; 
 
 };
