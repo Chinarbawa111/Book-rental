@@ -26,7 +26,7 @@ function App() {
       <Routes>
       <Route path="/" element={<Login auth={authenticate}/>} />
         <Route path="/booklist" element={<BookList logout={logout} status={status}/>} />
-        <Route path="/book/:id" element={<BooksDetail />} />
+        <Route path="/books/:id" element={<BooksDetail />} />
         <Route path="/favourites" element={<Favourite />} />
 
       </Routes>

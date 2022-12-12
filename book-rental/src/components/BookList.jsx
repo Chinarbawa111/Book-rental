@@ -10,7 +10,7 @@ const BookList = (props) => {
 
 const { favourites, addToFavourites, removeFromFavourites } = useAppContext();
 
-console.log("favourite are", favourites);
+
 const navigate = useNavigate();
 
 
@@ -45,7 +45,8 @@ const favouritesChecker = (id) => {
                 <h4>{book.title}</h4>
                 </div>
            <div>
-            <img src={book.image_url} alt="#"/>
+            <img src={book.image_url} alt="#" onClick={()=>navigate(`/books/${book.id}`)}
+            />
             </div>
            <div>
             {favouritesChecker(book.id) ?(
